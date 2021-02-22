@@ -38,7 +38,7 @@ The following graphic shows the distribution of the word counts which show that 
 
 The first thing determined to benchmark our model performance was the baseline accuracy. As half of the data is from "happy" post and hald the data is from "sad" posts the baseline accuracy is almost exactly 0.5. It is slightly in the favor of "happy" posts as a single null entry of data was removed and this was a "sad" entry.
 
-Our data was trained on 5 different models using 2 different vectorizers to process the text of the titles. The Training and Testing Scores of each model are shown below. 
+Our data was trained on 5 different models using 2 different vectorizers to process the text of the titles. The Training and Testing Scores of each model are shown below.
 
 |Model|Training Score|Testing Score|
 |---|---|---|
@@ -49,7 +49,7 @@ Our data was trained on 5 different models using 2 different vectorizers to proc
 |Support Vector Classification|0.99|0.86|
 |Random Forest Classifier|1.0|0.82|
 
-A [grid search with cross validation](#https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) was used to choose the parameters of the models whose values are tabulated, with the vectorizers use to convert our text data for modeling fed into the grid search using a 
+A [grid search with cross validation](#https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html) was used to choose the parameters of the models whose values are tabulated, with the vectorizers use to convert our text data for modeling fed into the grid search using a
 [pipeline](#https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html).
 
 Two different vectorizer were used to process the text data from the post titles.
@@ -63,11 +63,11 @@ It appeared that generally the TF-IDF Vectorizer would perform slightly better i
 
 In the end it appears that Support Vector Classification and Logistic Regression performed the best with **only** the vectorized data from the post titles. The confusion matrix of the SVC model is shown below.
 
-![SVC](https://github.com/ztzerhouni/NLP/tree/master/images/SVC.png)
+![SVC](https://github.com/ztzerhouni/NLP/images/SVC.png)
 
 Logistic Regression has a similar performance and is less overfit. Both models have False Positives and False Negatives that are relatively balanced. The confusion matrix of the Logistic Regression model is shown below.
 
-![logreg](https://github.com/ztzerhouni/NLP/tree/master/images/LogReg.png)
+![logreg](https://github.com/ztzerhouni/NLP/images/LogReg.png)
 
 It is of note that to find these settings for the performance and speed of the single Logistic Regression model used a **three hour** grid search was implemented. The solver used for the model, the "saga" solver, slowed down the modeling substantially for most of the grid search.
 
@@ -75,7 +75,7 @@ For this reason the final choice in model is the Support Vector Classifier. It h
 
 The KNN Classifier underformed significantly compared to the other models. It was highly overfit with a training accuracy of 0.91 and a testing accuracy of 0.64. We can see in the confusion matrix for the KNN model that False Negatives are significantly more frequent.
 
-![knn](https://github.com/ztzerhouni/NLP/tree/master/images/KNN.png)
+![knn](https://github.com/ztzerhouni/NLP/images/KNN.png)
 
 In this case that means that our KNN model has an issue accurately identifying the "sad" posts. The model is actually quite good at identfying "happy" posts. If this deficiency could be addressed there is the possibility that KNN could be improved to meet the performance of the other models.
 
