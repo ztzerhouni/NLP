@@ -63,11 +63,11 @@ It appeared that generally the TF-IDF Vectorizer would perform slightly better i
 
 In the end it appears that Support Vector Classification and Logistic Regression performed the best with **only** the vectorized data from the post titles. The confusion matrix of the SVC model is shown below.
 
-![SVC](https://git.generalassemb.ly/ztzerhouni/Submissions/blob/master/projects/3-project/images/SVC.png)
+![SVC](https://github.com/ztzerhouni/NLP/tree/master/images/SVC.png)
 
 Logistic Regression has a similar performance and is less overfit. Both models have False Positives and False Negatives that are relatively balanced. The confusion matrix of the Logistic Regression model is shown below.
 
-![logreg](https://git.generalassemb.ly/ztzerhouni/Submissions/blob/master/projects/3-project/images/LogReg.png)
+![logreg](https://github.com/ztzerhouni/NLP/tree/master/images/LogReg.png)
 
 It is of note that to find these settings for the performance and speed of the single Logistic Regression model used a **three hour** grid search was implemented. The solver used for the model, the "saga" solver, slowed down the modeling substantially for most of the grid search.
 
@@ -75,7 +75,7 @@ For this reason the final choice in model is the Support Vector Classifier. It h
 
 The KNN Classifier underformed significantly compared to the other models. It was highly overfit with a training accuracy of 0.91 and a testing accuracy of 0.64. We can see in the confusion matrix for the KNN model that False Negatives are significantly more frequent.
 
-![knn](https://git.generalassemb.ly/ztzerhouni/Submissions/blob/master/projects/3-project/images/KNN.png)
+![knn](https://github.com/ztzerhouni/NLP/tree/master/images/KNN.png)
 
 In this case that means that our KNN model has an issue accurately identifying the "sad" posts. The model is actually quite good at identfying "happy" posts. If this deficiency could be addressed there is the possibility that KNN could be improved to meet the performance of the other models.
 
